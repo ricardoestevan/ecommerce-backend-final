@@ -14,13 +14,6 @@ const create = catchError(async (req, res) => {
 });
 
 
-// const getOne = catchError(async(req, res) => {
-//     const { id } = req.params;
-//     const result = await User.findByPk(id);
-//     if(!result) return res.sendStatus(404);
-//     return res.json(result);
-// });
-
 const remove = catchError(async (req, res) => {
     const { id } = req.params;
     const result = await User.destroy({ where: { id } });
@@ -58,19 +51,13 @@ const login = catchError(async (req, res) => {
     return res.json({ user, token })
 })
 
-const logged = catchError(async (req, res) => {
-    const user = req.user
-    return res.json(user)
-})
 
 //
 
 module.exports = {
     getAll,
     create,
-    // getOne,
     remove,
     update,
-    login,
-    logged
+    login
 }
