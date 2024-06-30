@@ -51,6 +51,11 @@ const login = catchError(async (req, res) => {
     return res.json({ user, token })
 })
 
+const logged = catchError(async (req, res) => {
+    const userId = req.user.id
+    const result = await User.findByPk(userId)
+    return res.json(result)
+  })
 
 //
 
@@ -59,5 +64,6 @@ module.exports = {
     create,
     remove,
     update,
-    login
+    login,
+    logged
 }
