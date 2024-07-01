@@ -59,7 +59,7 @@ test("GET -> 'BASE_URL', should return statusCode 200", async () => {
     expect(res.body).toHaveLength(1)
 })
 
-test("GET -> 'BASE_URL/:id', should return statusCode 200 and res.body.title===product.title", async () => {
+test("GET -> 'BASE_URL/:id', should return statusCode 200 and res.body.title === product.title", async () => {
     const res = await request(app)
         .get(`${BASE_URL}/${productId}`)
 
@@ -68,7 +68,7 @@ test("GET -> 'BASE_URL/:id', should return statusCode 200 and res.body.title===p
     expect(res.body.title).toBe(product.title)
 })
 
-test("PUT -> BASE_URL/:id', should return statusCode 200 and res.body.title === productUpdate.title", async() => {
+test("PUT -> 'BASE_URL/:id', should return statusCode 200 and res.body.title === productUpdate.title", async() => {
     const productUpdate = {
         title: 'TV',
         description: 'Samsung - 55" Class S90C OLED 4K UHD',
@@ -85,7 +85,7 @@ test("PUT -> BASE_URL/:id', should return statusCode 200 and res.body.title === 
 
 })
 
-test('DELETE -> "BASE_URL/:id" should return statusCode 204', async() => {
+test("DELETE -> 'BASE_URL/:id', must return statusCode 204", async() => {
     const res = await request(app)
         .delete(`${BASE_URL}/${ productId }`)
         .set('Authorization', `Bearer ${TOKEN}`)

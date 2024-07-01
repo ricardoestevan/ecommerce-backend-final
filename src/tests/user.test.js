@@ -30,7 +30,7 @@
         phone: '9565555555'
     }
             
-    test("POST -> 'BASE_URL',  must  return  status  201  &  user.firstName === res.body.firstName", async () => {
+    test("POST -> 'BASE_URL', should return status 201 & user.firstName === res.body.firstName", async () => {
     
         const res = await request(app)
             .post(BASE_URL)
@@ -45,7 +45,7 @@
     })
             
     
-    test("GET -> 'BASE_URL', must  return  status 200  & res.body.length == 2", async () => {
+    test("GET -> 'BASE_URL', should return status 200 & res.body.length == 2", async () => {
     
         const res = await request(app)
             .get(BASE_URL)
@@ -58,7 +58,7 @@
     })
     
                
-    test("PUT -> 'BASE_URL/:id', must return status 200 & res.body.firstName === userUpdate.firstName", async () => {
+    test("PUT -> 'BASE_URL/:id', should return status 200 & res.body.firstName === userUpdate.firstName", async () => {
     
         const userUpdate = {
             firstName: 'Rodrigo',
@@ -75,7 +75,7 @@
         expect(res.body.firstName).toBe(userUpdate.firstName)
     
     }) 
-    test('POST -> BASE_URL/login should return statusCode 401', async() => {
+    test("POST -> 'BASE_URL/login' should return statusCode 401", async() => {
         const user = {
             email : 'agonzalez@gmail.com',
            password : '123456789'
@@ -88,7 +88,7 @@
         expect(res.statusCode).toBe(401)
     })
     
-    test('POST -> should return status code 200, res.body.user and res.body.token to be defined and res.body.user.email === user.email', async() => {
+    test("POST -> 'BASE_URL', should return statusCode 200, res.body.user and res.body.token to be defined and res.body.user.email === user.email", async() => {
         const user = {
              email : 'agonzalez@gmail.com',
             password : '000111'

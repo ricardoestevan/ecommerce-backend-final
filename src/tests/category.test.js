@@ -23,7 +23,7 @@ beforeAll(async () => {
 })
 
 
-test("Post 'BASE_URL',  must  return  status  20  &  category.name === res.body.name", async () => {
+test("POST -> 'BASE_URL', should return  status  20  &  category.name === res.body.name", async () => {
 
     const category = {
         name: "Game Console"
@@ -44,7 +44,7 @@ test("Post 'BASE_URL',  must  return  status  20  &  category.name === res.body.
 })
 
 
-test("Get 'BASE_URL', must  return  status 200  & res.body.length == 1", async () => {
+test("GET -> 'BASE_URL', should return  status 200  & res.body.length == 1", async () => {
 
     const res = await request(app)
         .get(BASE_URL)
@@ -56,7 +56,7 @@ test("Get 'BASE_URL', must  return  status 200  & res.body.length == 1", async (
 })
 
 
-test("Delete 'BASE_URL/:id', must return status 204", async () => {
+test("DELETE -> 'BASE_URL/:id', must return status 204", async () => {
 
     const res = await request(app)
         .delete(`${BASE_URL}/${categoryId}`)
