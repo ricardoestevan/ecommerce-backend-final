@@ -21,8 +21,7 @@ beforeAll(async () => {
     product = await Product.create(   product = {
         title: 'TV',
         description: 'Samsung - 65" Class S90C OLED 4K UHD Smart Tizen TV',
-        price: 1599,
-        // categoryId: category.id
+        price: 1599
     });
 
     purchase = {
@@ -47,7 +46,7 @@ test("POST -> 'BASE_URL' should return 201 and res.body.purchase.userid === purc
     expect(res.body.userId).toBe(purchase.userId)
 });
 
-test("GET --> 'BASE_URL/' should return 200 and res.body..purchase.userid === purchase.userId", async () =>{
+test("GET -> 'BASE_URL/' should return 200 and res.body..purchase.userid === purchase.userId", async () =>{
     const res = await request(app)
     .get(BASE_URL)
     .set('Authorization', `Bearer ${TOKEN}`)
