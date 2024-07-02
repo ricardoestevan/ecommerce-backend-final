@@ -23,7 +23,7 @@ beforeAll(async () => {
     product = await Product.create({
         title: "Klein Tools Multi-Meter",
         description: "Klein Tools 600-Volt Digital Multi-Meter, Manual-Ranging",
-        price: "35"
+        price: 35
     })
 
     cart = {

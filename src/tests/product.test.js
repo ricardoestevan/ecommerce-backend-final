@@ -29,7 +29,6 @@ beforeAll(async () => {
         price: 1599,
         categoryId: category.id
     }
-
 })
 
 afterAll(async () => {

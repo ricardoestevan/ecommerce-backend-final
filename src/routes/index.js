@@ -12,6 +12,6 @@ router.use('/users', routerUser)            //user route
 router.use('/categories', routerCategory)   //category route
 router.use('/products', routerProduct)      //product route
 router.use('/cart', verifyJwt, routerCart)    //cart route verifyJwt placed here to protect the whole route to avoid protecting routes individually
-router.use('/purchases', verifyJwt, routerPurchase) //purchase route is protected here with  verifyJwt to avoid protecting routes individually in purchase.router.js
+router.use('/purchase', verifyJwt, routerPurchase) //purchase route is protected here with  verifyJwt to avoid protecting routes individually in purchase.router.js
 
 module.exports = router;
