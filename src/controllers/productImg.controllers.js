@@ -17,7 +17,6 @@ const create = catchError(async (req, res) => {
   const result = await ProductImg.create({ filename, url });
   return res.status(201).json(result);
 
-  return res.sendStatus(200);
 });
 const remove = catchError(async (req, res) => {
   const { id } = req.params;
