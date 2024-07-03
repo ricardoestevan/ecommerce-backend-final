@@ -8,6 +8,9 @@ routerProduct.route('/')
     .get(getAll)
     .post(verifyJwt , create);
 
+routerProduct.route('/:id/images')
+    .post(verifyJwt, setImages)
+
 routerProduct.route('/:id')
     .get(getOne)
     .delete(verifyJwt , remove)
