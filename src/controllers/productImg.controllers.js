@@ -22,10 +22,9 @@ const create = catchError(async (req, res) => {
 const remove = catchError(async (req, res) => {
   const { id } = req.params;
   const result = await ProductImg.findByPk(id);
-  //const result = await ProductImg.destroy({ where: { id } });
   if (!result) return res.sendStatus(404);
   console.log(__dirname);
-  //../public/uploads/archivo
+  //../public/uploads/file
   const imageFilePath = path.join(
     __dirname,
     "..",
